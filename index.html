@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS | Color Changer</title>
+        <style>
+            body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            .container{max-width: 1024px;margin: 0 auto;}
+            .box-area{display: flex; justify-content: space-between;}
+            .box{width: 150px;height: 150px;cursor: copy;}
+            .box-red{background: red;}
+            .box-green{background: green;}
+            .box-blue{background: blue;}
+            .box-yellow{background: yellow;}
+            .box-grey{background: grey;}
+            .box-orange{background: orange;}
+            p{text-align: center;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box-area">
+                <div class="box box-red"></div>
+                <div class="box box-green"></div>
+                <div class="box box-blue"></div>
+                <div class="box box-yellow"></div>
+                <div class="box box-grey"></div>
+                <div class="box box-orange"></div>
+            </div>
+            <p>Click on the box to pick the color and click on the other box to change the color</p>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var counter = 0;
+            var x = '';
+            $('.box').click(function(){
+                counter += 1;
+                if(counter<= 1 || x == ''){
+                    window.x = $(this).css('background-color');
+                }
+                else{
+                    $(this).css('background-color', x);
+                    window.x='';
+                }
+            });
+        </script>
+    </body>
+</html>
